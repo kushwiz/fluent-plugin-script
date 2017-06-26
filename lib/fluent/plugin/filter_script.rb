@@ -4,6 +4,10 @@ module Fluent
 
     config_param :path, :string
 
+    def filter(tag, time, record)
+      record
+    end
+
     def configure(conf)
       super
       load_script_file(conf['path'].to_s)
